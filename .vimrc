@@ -36,3 +36,9 @@ set hidden " Required for specific actions that require multiple buffers
 
 set expandtab ts=4 sw=4 ai
 
+" vim-go stuff
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_function_calls = 1
+

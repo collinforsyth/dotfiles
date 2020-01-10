@@ -56,7 +56,6 @@ export GO11MODULE=on
 # fzf :hearteyes:
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
 # Ripgrep functionality
 # --files: List files that would be searched but do not search
 # --no-ignore: Do not respect .gitignore, etc...
