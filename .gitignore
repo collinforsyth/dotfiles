@@ -1,0 +1,17 @@
+# Ignore everything
+/*
+
+# But not anything with a dot :)
+!.*
+!.gitignore
+!README.md
+
+# But please ignore these:
+.vscode
+.virtualenvs
+.ssh
+.Trash
+.rustup
+.npm
+.cpan
+.kube
