@@ -56,6 +56,12 @@ export GO11MODULE=on
 # fzf :hearteyes:
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+
+# Ripgrep don't search in vendor :O
+RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
+# Since ripgrep seems to be ignoring the config file :/
+alias rg='rg --glob \!vendor'
+
 # Ripgrep functionality
 # --files: List files that would be searched but do not search
 # --no-ignore: Do not respect .gitignore, etc...
@@ -64,3 +70,6 @@ export GO11MODULE=on
 # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
+
+# Git stuff
+alias gl='git log --graph --decorate --pretty=oneline --abbrev-commit'
