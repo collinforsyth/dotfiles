@@ -59,17 +59,13 @@ export GO11MODULE=on
 
 # Ripgrep don't search in vendor :O
 RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
-# Since ripgrep seems to be ignoring the config file :/
-alias rg='rg --glob \!vendor'
 
 # Ripgrep functionality
 # --files: List files that would be searched but do not search
-# --no-ignore: Do not respect .gitignore, etc...
 # --hidden: Search hidden files and folders
 # --follow: Follow symlinks
 # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
-
+export FZF_DEFAULT_COMMAND="rg --files --ignore --hidden --follow -g '!{.git,node_modules,vendor}/*'"
 
 # Git stuff
 alias gl='git log --graph --decorate --pretty=oneline --abbrev-commit'
