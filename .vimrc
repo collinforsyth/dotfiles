@@ -20,6 +20,7 @@ Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mattn/emmet-vim'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug 'rbgrouleff/bclose.vim'
 call plug#end()
 
 " Let's keep our leader key to be a comma
@@ -27,14 +28,15 @@ let mapleader = " "
 
 " Keep emmet as our leader key
 let g:user_emmet_leader_key=','
-nnoremap <silent> <leader>f :ProjectFiles<CR>
+nnoremap <silent> <leader>f :FZF<CR>
 nnoremap <silent> <leader><space> :Buffers<CR>
 nnoremap <silent> <leader>A :Windows<CR>
 nnoremap <silent> <leader>l :BLines<CR>
 nnoremap <silent> <leader>o :BTags<CR>
 nnoremap <silent> <leader>t :Tags<CR>
 nnoremap <silent> <leader>? :History<CR>
-nnoremap <silent> <leader>s :Rg<CR>
+nnoremap <silent> <leader>s :Find<CR>
+nnoremap <leader>n <C-w><C-w>
 
 " Always have GitGutter run on save
 autocmd BufWritePost * GitGutter
@@ -112,7 +114,7 @@ au FileType css setlocal formatprg=prettier\ --parser\ css
 
 " This is a custom ripgrep function for searching source code
 " We want to ignore node_modules and vendor/ directories for speed
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!{.git,node_modules,vendor}" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!{.git,node_modules,vendor}" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
 " Search project root
 function! s:find_git_root()
