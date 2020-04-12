@@ -62,7 +62,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # Gostuff
 export GOPATH=$HOME
 export GOBIN=$HOME/bin
-export GO11MODULE=off
+export GO11MODULE=on
 
 # fzf :hearteyes:
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
