@@ -19,6 +19,7 @@ Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'vim-airline/vim-airline'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 
@@ -54,6 +55,9 @@ set updatetime=300
 set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
+" show tab lines
+set list lcs=tab:\|\ 
+
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
