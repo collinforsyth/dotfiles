@@ -6,8 +6,6 @@ export ZSH="/Users/collinforsyth/.oh-my-zsh"
 
 ZSH_THEME="refined"
 
-source ~/.zsh/*.zsh
-
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
@@ -20,8 +18,6 @@ source ~/.zsh/*.zsh
 plugins=(
 	autojump
 	git
-    kube-ps1
-    golang
 	fzf
 	vi-mode
 	zsh-syntax-highlighting
@@ -51,10 +47,6 @@ alias python=python3
 alias pip=pip3
 
 alias vim=nvim
-# Sometimes we want to open an entire folder in vim.
-vimd() {
-    nvim $(find $1 -type f)
-}
 
 # dotfile management
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -80,6 +72,7 @@ export FZF_DEFAULT_COMMAND="rg --files --ignore --hidden --follow -g '!{.git,nod
 
 # Git stuff
 alias gl='git log --graph --decorate --pretty=oneline --abbrev-commit'
+alias gs='git status'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
