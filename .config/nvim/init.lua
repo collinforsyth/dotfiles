@@ -22,6 +22,11 @@ require('packer').startup(function()
   use 'tpope/vim-commentary' -- "gc" to comment visual regions/lines
   use 'tpope/vim-surround' -- better tab support
 
+  -- editorconfig
+  use 'editorconfig/editorconfig-vim'
+
+  use 'windwp/nvim-autopairs'
+
   -- UI to select things (files, grep results, open buffers...)
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 
@@ -119,6 +124,9 @@ require('lualine').setup()
 
 -- set up nvim-tree
 require'nvim-tree'.setup()
+
+-- autopairs
+require('nvim-autopairs').setup{}
 
 -- Gitsigns
 require('gitsigns').setup {
@@ -273,6 +281,16 @@ lspconfig.sumneko_lua.setup {
       },
     },
   },
+}
+
+lspconfig.eslint.setup{}
+lspconfig.tsserver.setup{}
+lspconfig.tailwindcss.setup{}
+
+-- enable snippet capability
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+lspconfig.html.setup{
+	capabilities = capabilities,
 }
 
 lspconfig.gopls.setup {
